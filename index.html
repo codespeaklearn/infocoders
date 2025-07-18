@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Incoders | Cutting-Edge Web & IT Solutions, Pune</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #1a1a40;
+      --secondary: #6b48ff;
+      --accent: #00ffdd;
+      --background: #0d0d2b;
+      --white: #f5f5f5;
+      --glow: #00ffdd80;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: var(--background);
+      color: var(--white);
+      overflow-x: hidden;
+    }
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      padding: 4rem 0;
+      text-align: center;
+      position: relative;
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    }
+    .logo {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 3.5rem;
+      font-weight: 700;
+      background: linear-gradient(45deg, var(--accent), var(--white));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    .logo i { font-size: 2.5rem; color: var(--accent); }
+    .subtitle {
+      font-size: 1.3rem;
+      font-weight: 300;
+      opacity: 0.9;
+      margin: 1rem 0 2rem;
+    }
+    nav {
+      margin: 2rem 0;
+    }
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      margin: 0 1.5rem;
+      font-weight: 500;
+      font-size: 1.1rem;
+      transition: color 0.3s, transform 0.3s;
+    }
+    nav a:hover {
+      color: var(--accent);
+      transform: translateY(-3px);
+    }
+    .container {
+      max-width: 1200px;
+      margin: -4rem auto 0;
+      padding: 3rem 2rem;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
+      position: relative;
+      z-index: 2;
+    }
+    .section-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.5rem;
+      color: var(--accent);
+      margin-bottom: 2rem;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    .about {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 4rem;
+    }
+    .services-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .service-item {
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.2));
+      border-radius: 15px;
+      padding: 2rem;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      backdrop-filter: blur(5px);
+      border: 1px solid var(--glow);
+    }
+    .service-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 30px var(--glow);
+    }
+    .service-item i {
+      font-size: 2.5rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    .service-title {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: var(--white);
+      margin-bottom: 0.8rem;
+    }
+    .service-desc {
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--white);
+      opacity: 0.85;
+    }
+    .clients-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+    .client-name {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 0.8rem 1.5rem;
+      border-radius: 25px;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--accent);
+      border: 1px solid var(--glow);
+      transition: transform 0.3s;
+    }
+    .client-name:hover {
+      transform: scale(1.05);
+    }
+    .contact-section {
+      margin: 4rem 0;
+    }
+    .contact-form {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
+    }
+    .contact-form label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: var(--accent);
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1.2rem;
+      border: none;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--white);
+      font-size: 1rem;
+      font-family: inherit;
+    }
+    .contact-form textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    .contact-form button {
+      background: linear-gradient(90deg, var(--secondary), var(--accent));
+      color: var(--white);
+      border: none;
+      padding: 0.8rem 2.5rem;
+      border-radius: 8px;
+      font-size: 1.2rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .contact-form button:hover {
+      background: var(--accent);
+      transform: translateY(-3px);
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: rgba(0, 0, 0, 0.3);
+      color: var(--white);
+      font-size: 1rem;
+      margin-top: 3rem;
+    }
+    @media (max-width: 850px) {
+      .services-list { grid-template-columns: 1fr; }
+      .container { padding: 2rem 1rem; }
+    }
+    @media (max-width: 520px) {
+      .logo { font-size: 2.5rem; }
+      .section-title { font-size: 1.8rem; }
+      .container { padding: 1.5rem 0.8rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo"><i class="fas fa-microchip"></i> Incoders</div>
+    <div class="subtitle">Revolutionizing digital experiences with innovative IT solutions in Pune</div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#clients">Clients</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+  <div class="container">
+    <section class="about" id="about">
+      <div class="section-title">About Us</div>
+      Incoders is a trailblazing IT powerhouse in Pune, crafting futuristic <b>website development</b>, mobile apps, and transformative digital solutions. We fuse cutting-edge technology with bold creativity to elevate startups, SMEs, and global enterprises.
+    </section>
+
+    <section class="services" id="services">
+      <div class="section-title">Our Services</div>
+      <div class="services-list">
+        <div class="service-item">
+          <i class="fas fa-code"></i>
+          <div class="service-title">Custom Website Development</div>
+          <div class="service-desc">Bespoke, high-performance websites engineered to captivate and convert your audience.</div>
+        </div>
+        <div class="service-item">
+          <i class="fas fa-shopping-cart"></i>
+          <div class="service-title">E-Commerce Solutions</div>
+          <div class="service-desc">Dynamic online stores with seamless UX, optimized for growth and scalability.</div>
+        </div>
+        <div class="service-item">
+          <i class="fas fa-mobile-alt"></i>
+          <div class="service-title">Mobile App Development</div>
+          <div class="service-desc">Sleek, powerful apps for iOS and Android, tailored to your business needs.</div>
+        </div>
+        <div class="service-item">
+          <i class="fas fa-paint-brush"></i>
+          <div class="service-title">UI/UX Design</div>
+          <div class="service-desc">Visually stunning, user-centric designs that drive engagement and loyalty.</div>
+        </div>
+        <div class="service-item">
+          <i class="fas fa-cloud"></i>
+          <div class="service-title">Cloud Integration</div>
+          <div class="service-desc">Secure, scalable cloud solutions to empower your business operations.</div>
+        </div>
+        <div class="service-item">
+          <i class="fas fa-lightbulb"></i>
+          <div class="service-title">IT Consulting & Strategy</div>
+          <div class="service-desc">Strategic insights to navigate digital transformation and maximize ROI.</div>
+        </div>
+        <div class="service-item">
+          <i class="fas fa-tools"></i>
+          <div class="service-title">Maintenance & Support</div>
+          <div class="service-desc">Proactive support to ensure your digital assets perform flawlessly.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="clients" id="clients">
+      <div class="section-title">Our Partners</div>
+      <div class="clients-list">
+        <div class="client-name">TechNova Solutions</div>
+        <div class="client-name">PixelPoint Creations</div>
+        <div class="client-name">EduSpark</div>
+        <div class="client-name">MH Traders</div>
+        <div class="client-name">HealthcareNext</div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="section-title">Get in Touch</div>
+      <form class="contact-form" action="https://formsubmit.io/send/codespeaklearn@gmail.com" method="POST" id="myForm">
+        <input type="hidden" name="_redirect" value="https://incoders.tech/thanks">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" required>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" required>
+        <label for="message">Your Vision</label>
+        <textarea name="message" id="message" required></textarea>
+        <button type="submit">Launch Your Idea</button>
+        <div id="form-status" style="margin-top: 1rem; font-size: 1rem;"></div>
+      </form>
+    </section>
+  </div>
+  <footer>
+    Pune, India<br>
+    © 2025 Incoders — Shaping the future of digital innovation.
+  </footer>
+  <script>
+    const form = document.getElementById('myForm');
+    const statusDiv = document.getElementById('form-status');
+    if (form) {
+      form.addEventListener('submit', function(event) {
+        statusDiv.textContent = "Transmitting your vision...";
+        setTimeout(() => {
+          statusDiv.textContent = "Success! We'll connect with you soon.";
+        }, 700);
+      });
+    }
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href.startsWith("#")) {
+          e.preventDefault();
+          document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
